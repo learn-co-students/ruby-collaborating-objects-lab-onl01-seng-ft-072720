@@ -9,14 +9,18 @@ attr_accessor :path
     end
 
     def files
-       files_arr =  Dir.entries(@path).select do |file| 
+        files_arr =  Dir.entries(@path).select do |file| 
             file.end_with?(".mp3")
         end
     end
+    
 
-    def import(some_filename)
-        Song.new_by_filename(some_filename)
+    def import
+        self.files.each do |file|
+        Song.new_by_filename(file)
+        end
     end
+
 
 
 end
