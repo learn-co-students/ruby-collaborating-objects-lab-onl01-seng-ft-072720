@@ -11,7 +11,7 @@ def self.all
   @@all
 end
 
-def new_by_filename(filename)
+def self.new_by_filename(filename)
   names = filename.split(" - ")
   song = Song.new(names[0])
   song.artist = names[2]
